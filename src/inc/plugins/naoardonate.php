@@ -38,7 +38,7 @@ function naoardonate_info(){
         "website"   => "https://red.coderme.com/mybb-donation-plugin",
         "author"    => "CoderMe.com",
         "authorsite"    => "https://markit.coderme.com?src=pluginslist",
-        "version"   => "6.0.0",
+        "version"   => "6.0.1",
         "guid"      => "a60331204b57399c66a958398b08e6df",
         // this shouldn't be in the 1st place
         // "codename"  => "naoardonate",
@@ -235,8 +235,8 @@ function naoardonate_install()
         $gid = (int)$db->fetch_field($query, 'gid');
         $db->update_query('settinggroups', array('title' => 'CoderMe Donation FREE', 'name' => 'naoardonate'), "gid='{$gid}'");
     else:
-        $query = $db->simple_select("settinggroups", "COUNT(*) as rows");
-        $rows = $db->fetch_field($query, "rows");
+        $query = $db->simple_select("settinggroups", "COUNT(*) as rose");
+        $rows = $db->fetch_field($query, "rose");
         $insertarray = array(
             'name' => 'naoardonate',
             'title' => 'CoderMe Donation FREE',
@@ -1203,6 +1203,11 @@ function naoardonate_is_installed()
     //return False;
     global $db;
     $query = $db->simple_select('settings', 'name', "name='naoardonate_hidetopemails'");
+
+    if ($db->num_rows($query) > 0) {
+
+
+    }
     
     if($db->num_rows($query) > 0){
         return True;

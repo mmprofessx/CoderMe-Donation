@@ -1,3 +1,9 @@
+CoderMe Donation 6.0.1
+---------------------------------
+    # Bugfix: installation bug on MariaDB
+    # Update License.	
+
+
 CoderMe Donation 6.0.0
 ---------------------------------
     # Security: Payza dropped (out of business)
