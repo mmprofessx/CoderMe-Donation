@@ -112,6 +112,12 @@ $l['naoardonate_settings_googleanalytics_dec'] = '<span style="color:#3d3b3e;fon
 $l['naoardonate_settings_hidetopemails'] = 'Hide top donors emails?';
 $l['naoardonate_settings_hidetopemails_desc'] = '<span style="color:#3d3b3e;font-size:small">Choose whether to hide top donor\'s emails in top donors list page or not.<br />For privacy reasons its <em>highly recommended</em> to hide donors\' emails even from admins.</span>';
 
+
+$l['naoardonate_settings_unban'] = 'Unban Fees';
+$l['naoardonate_settings_unban_desc'] = '<span style="color:#3d3b3e;font-size:small">Give the banned users the option to unban themselves by paying this amount of money, 0 means disable this functionality</span>';
+
+
+
 $l['naoardonate_settings_uninstall'] = 'CoderMe Donation! Uninstallation';
 $l['naoardonate_settings_uninstall_message'] = 'Warning: Delete ALL donors logs, CoderMe plugin\'s settings and all its templates, this action cannot be undone, still wish to proceed?';
 

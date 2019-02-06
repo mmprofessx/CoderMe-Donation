@@ -474,6 +474,30 @@ disabled=$lang->naoardonate_settings_disabled
     );
 
 
+
+    
+    if($mybb->settings['naoardonate_unban'])   {
+         $naoardonate_unban = $mybb->settings['naoardonate_unban'];
+          }     else {
+        $naoardonate_unban = '0';
+        }
+
+
+    
+
+    $settingsarray[] = array(
+        'name' => 'naoardonate_unban',
+        'title' => $db->escape_string($lang->naoardonate_settings_unban),
+        'description' => $db->escape_string($lang->naoardonate_settings_unban_desc),
+        'optionscode' => 'text',
+        'value' => $db->escape_string($naoardonate_unban),
+        'disporder' => $c++,
+        'gid' => $gid
+    );
+
+
+
+    
     if($mybb->settings['naoardonate_enablebar'])
         {
         $naoardonate_enablebar = $mybb->settings['naoardonate_enablebar'];
