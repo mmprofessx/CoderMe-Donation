@@ -38,7 +38,7 @@ function naoardonate_info(){
         "website"   => "https://red.coderme.com/mybb-donation-plugin",
         "author"    => "CoderMe.com",
         "authorsite"    => "https://markit.coderme.com?src=pluginslist",
-        "version"   => "6.0.2",
+        "version"   => "6.0.3",
         "guid"      => "a60331204b57399c66a958398b08e6df",
         // this shouldn't be in the 1st place
         // "codename"  => "naoardonate",
