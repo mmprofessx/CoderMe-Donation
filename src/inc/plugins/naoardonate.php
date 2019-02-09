@@ -38,7 +38,7 @@ function naoardonate_info(){
         "website"   => "https://red.coderme.com/mybb-donation-plugin",
         "author"    => "CoderMe.com",
         "authorsite"    => "https://markit.coderme.com?src=pluginslist",
-        "version"   => "6.0.1",
+        "version"   => "6.0.2",
         "guid"      => "a60331204b57399c66a958398b08e6df",
         // this shouldn't be in the 1st place
         // "codename"  => "naoardonate",
@@ -1377,6 +1377,17 @@ function naoardonate_activate()
         $templates_array[] = array(
         'title' => 'naoardonate_links_topdonors_v5',
         'template' => $db->escape_string('<li><a href="{$mybb->settings[\'bburl\']}/donate.php?action=top_donors" style="background-image: url(\'{$mybb->settings[\'bburl\']}/images/naoar/top.png\')">{$lang->naoardonate_front_top_title}</a></li>'),
+        'sid' => '-1',
+        'version' => '',
+        'dateline' => TIME_NOW
+    );
+
+
+
+
+        $templates_array[] = array(
+        'title' => 'naoardonate_links_unban_v7',
+        'template' => $db->escape_string('<li><a href="{$mybb->settings[\'bburl\']}/donate.php?action=unban" style="background-image: url(\'{$mybb->settings[\'bburl\']}/images/naoar/unban.png\')">{$lang->naoardonate_front_unban_title}</a></li>'),
         'sid' => '-1',
         'version' => '',
         'dateline' => TIME_NOW

@@ -19,6 +19,7 @@
 $l['naoardonate_front_top_title'] = "Top Donors";
 $l['naoardonate_front_email'] = "Email";
 $l['naoardonate_front_donate_title'] = "Donate";
+$l['naoardonate_front_unban_title'] = "Unban";
 $l['naoardonate_front_custom'] = "Custom amount";
 $l['naoardonate_front_note'] = "Note";
 $l['naoardonate_front_msg'] = "Message";
