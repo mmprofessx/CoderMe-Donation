@@ -38,7 +38,7 @@ function naoardonate_info(){
         "website"   => "https://red.coderme.com/mybb-donation-plugin",
         "author"    => "CoderMe.com",
         "authorsite"    => "https://markit.coderme.com?src=pluginslist",
-        "version"   => "6.0.3",
+        "version"   => "6.0.4",
         "guid"      => "a60331204b57399c66a958398b08e6df",
         // this shouldn't be in the 1st place
         // "codename"  => "naoardonate",
@@ -1225,14 +1225,10 @@ function naoardonate_is_installed()
 {
     // testing
     //return False;
+
     global $db;
-    $query = $db->simple_select('settings', 'name', "name='naoardonate_hidetopemails'");
+    $query = $db->simple_select('settings', 'name', "name='naoardonate_unban'");
 
-    if ($db->num_rows($query) > 0) {
-
-
-    }
-    
     if($db->num_rows($query) > 0){
         return True;
     }
