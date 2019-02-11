@@ -38,7 +38,7 @@ function naoardonate_info(){
         "website"   => "https://red.coderme.com/mybb-donation-plugin",
         "author"    => "CoderMe.com",
         "authorsite"    => "https://markit.coderme.com?src=pluginslist",
-        "version"   => "6.0.4",
+        "version"   => "6.0.5",
         "guid"      => "a60331204b57399c66a958398b08e6df",
         // this shouldn't be in the 1st place
         // "codename"  => "naoardonate",
@@ -1383,7 +1383,7 @@ function naoardonate_activate()
 
         $templates_array[] = array(
         'title' => 'naoardonate_links_unban_v7',
-        'template' => $db->escape_string('<li><a href="{$mybb->settings[\'bburl\']}/donate.php?action=unban" style="background-image: url(\'{$mybb->settings[\'bburl\']}/images/naoar/unban.png\')">{$lang->naoardonate_front_unban_title}</a></li>'),
+        'template' => $db->escape_string('<li><a href="{$mybb->settings[\'bburl\']}/donate.php" style="background-image: url(\'{$mybb->settings[\'bburl\']}/images/naoar/unban.png\')">{$lang->naoardonate_front_unban_title}</a></li>'),
         'sid' => '-1',
         'version' => '',
         'dateline' => TIME_NOW
@@ -1619,11 +1619,11 @@ function naoardonate_activate()
 
 
     $templates_array[] = array(
-        'title' => 'naoardonate_donate_v5',
+        'title' => 'naoardonate_donate_v7',
         'template' => $db->escape_string('<html>
 <head>
 {$googleanalytics}
-<title>{$mybb->settings[\'bbname\']} - {$lang->naoardonate_front_donate_title} </title>
+<title>{$mybb->settings[\'bbname\']} - {$donation_page_title} </title>
 {$headerinclude}
 <style type="text/css">
 .w70 {
@@ -1658,14 +1658,14 @@ font-size:x-small
 <table class="tborder" border="0" cellspacing="{$theme[\'borderwidth\']}" cellpadding="{$theme[\'tablespace\']}" >
 <tr>
 <td colspan="2" class="thead">
-<strong> {$lang->naoardonate_front_donationform} </strong>
+<strong> {$donationform_title} </strong>
 </td></tr>
 
 <tr>
 <td  class="trow1 w100"  align="center">
 {$aboutyou}
 <fieldset class="w50 tleft">
-<legend><strong>{$lang->naoardonate_front_donationdetails}</strong></legend>
+<legend><strong>{$donationdetails_title}</strong></legend>
 <table cellspacing="0" cellpadding="{$theme[\'tablespace\']}" class="w100">
     <tr>
         <td><strong>{$lang->naoardonate_global_payment_method}:</strong>
@@ -1695,7 +1695,7 @@ font-size:x-small
         <tr>
         <td align="center">
         <input type="hidden" name="coderme_post_key" value="{$coderme_post_key}">
-        <input type="submit"  name ="submit" value="   {$lang->naoardonate_global_go}   " />
+        <input type="submit" name ="submit" value="   {$lang->naoardonate_global_go}   " />
         </td>
 
     </tr>
@@ -1711,16 +1711,13 @@ font-size:x-small
     </tr>
 </table>
 </div>
-<script type="text/javascript">
-<!--
+<script>
 a=document.naoar;f=a.p_amount;d=document;function load(){change_payment_method();{$js_load}}
 {$js_updatelist}{$js_funcs}
 function coderme_alert(msg){
 jQuery("#coderme_msg").html(msg);
 jQuery("#coderme_alert").modal({ fadeDuration: 250, keepelement: true, zIndex: (typeof modal_zindex !== "undefined" ? modal_zindex : 9999) });
-}
-//-->
-</script>
+}</script>
 
 <br style="clear: both" />
 {$footer}
@@ -1730,6 +1727,8 @@ jQuery("#coderme_alert").modal({ fadeDuration: 250, keepelement: true, zIndex: (
         'version' => '',
         'dateline' => TIME_NOW
     );
+
+
 
 
     $templates_array[] = array(

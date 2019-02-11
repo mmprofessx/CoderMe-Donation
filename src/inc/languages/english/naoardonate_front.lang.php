@@ -70,8 +70,10 @@ $l['naoardonate_front_error_bademail'] = "Invalid email, please enter a valid em
 
 $l['naoardonate_front_aboutu'] = "About you";
 $l['naoardonate_front_donationdetails'] = "Donation Details";
+$l['naoardonate_front_unbandetails'] = "Unban Details";
 $l['naoardonate_front_donationnote'] = "Donation Note";
 $l['naoardonate_front_donationform'] = "Donation form";
+$l['naoardonate_front_unbanform'] = "Unban form";
 $l['naoardonate_front_minimum'] = "Minimum {1}";
 
 
