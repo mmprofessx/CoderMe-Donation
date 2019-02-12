@@ -131,6 +131,7 @@ function getCommonCurrenciesFor() {
 
 // mayDonate checks if the user allowed to donate
 function mayDonate(array $user, $allowed_groups) {
+    global $mybb;
       $donate_groups = explode(',', $allowed_groups);
   
       $gids = array();
@@ -150,6 +151,14 @@ function mayDonate(array $user, $allowed_groups) {
         return true;
       }
     }
+
+   // banned users maybe allowed too who knows
+   if (isset($user['usergroup']) &&
+       $user['usergroup'] == 6 &&
+       $mybb->settings['naoardonate_unban'] > 0
+    ) {
+       return true;
+   }
   
    return false;
 

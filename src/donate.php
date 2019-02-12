@@ -22,7 +22,7 @@ define('THIS_SCRIPT', 'donate.php');
 
 
 
-$templatelist = "naoardonate_redirect_v5,naoardonate_donate_aboutu_v5,naoardonate_donate_captcha_v5,naoardonate_donate_offline_wu_v5,naoardonate_donate_offline_bw_v5,naoardonate_donate_currencies_row_v5,naoardonate_donate_currencies_row_v5,naoardonate_donate_note_v5,naoardonate_donate_v5,naoardonate_top_donation_v5,naoardonate_top_v5";
+$templatelist = "naoardonate_redirect_v5,naoardonate_donate_aboutu_v5,naoardonate_donate_captcha_v5,naoardonate_donate_offline_wu_v5,naoardonate_donate_offline_bw_v5,naoardonate_donate_currencies_row_v5,naoardonate_donate_currencies_row_v5,naoardonate_donate_note_v5,naoardonate_donate_v5,naoardonate_top_donation_v5,naoardonate_top_v5,naoardonate_links_unban_v7";
 
 require_once "./global.php";
 require_once  MYBB_ROOT . 'inc/plugins/naoardonate/funcs.php';
@@ -37,7 +37,7 @@ if(!$db->table_exists('naoardonate')):
 	error($lang->naoardonate_front_error_notinstalled);
 elseif($mybb->settings['naoardonate_onoff'] == 0):
 	error($lang->naoardonate_front_error_disabled);
-elseif((!$mybb->settings['naoardonate_payment_method_pz'] and !$mybb->settings['naoardonate_payment_method_lr'] and !$mybb->settings['naoardonate_payment_method_2c'] and !$mybb->settings['naoardonate_payment_method_pp']) or strlen($mybb->settings['naoardonate_payment_method']) < 5):
+elseif((!$mybb->settings['naoardonate_payment_method_2c'] and !$mybb->settings['naoardonate_payment_method_pp']) or strlen($mybb->settings['naoardonate_payment_method']) < 5):
 	error($lang->naoardonate_front_error_notready);
 elseif(!mayDonate($mybb->user, $mybb->settings['naoardonate_from'])):
   	$mybb->user['uid'] != 0 ?
