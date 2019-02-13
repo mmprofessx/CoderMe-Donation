@@ -26,6 +26,7 @@ define('CODERME_2CHECKOUT', '2CHECKOUT');
 define('CODERME_PAYPAL', 'PAYPAL');
 define('CODERME_BANK_WIRE', 'BANK_WIRE');
 define('CODERME_WESTERN_UNION', 'WESTERN_UNION');
+define('CODERME_BANNED_GROUP', 6);
 
 
 
@@ -164,4 +165,12 @@ function mayDonate(array $user, $allowed_groups) {
 
   }
 
+
+function isBanned(array $user){
+    if (isset($user['usergroup']) and 
+        $user['usergroup'] == CODERME_BANNED_GROUP) {
+        return true;
+    }
+    return false;
+}
     

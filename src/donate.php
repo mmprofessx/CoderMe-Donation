@@ -33,28 +33,36 @@ require_once  MYBB_ROOT . 'inc/plugins/naoardonate/funcs.php';
 $lang->load("naoardonate_front");
 $lang->load("naoardonate_global");
 
-if(!$db->table_exists('naoardonate')):
+if(!$db->table_exists('naoardonate')){
 	error($lang->naoardonate_front_error_notinstalled);
-elseif($mybb->settings['naoardonate_onoff'] == 0):
+} elseif($mybb->settings['naoardonate_onoff'] == 0) {
 	error($lang->naoardonate_front_error_disabled);
-elseif((!$mybb->settings['naoardonate_payment_method_2c'] and !$mybb->settings['naoardonate_payment_method_pp']) or strlen($mybb->settings['naoardonate_payment_method']) < 5):
+} elseif((!$mybb->settings['naoardonate_payment_method_2c'] and !$mybb->settings['naoardonate_payment_method_pp']) or strlen($mybb->settings['naoardonate_payment_method']) < 5) {
 	error($lang->naoardonate_front_error_notready);
-elseif(!mayDonate($mybb->user, $mybb->settings['naoardonate_from'])):
+} elseif(!mayDonate($mybb->user, $mybb->settings['naoardonate_from'])){
   	$mybb->user['uid'] != 0 ?
                        error($lang->naoardonate_front_error_blockedgroups)
                        : error($lang->naoardonate_front_error_noguests);
-endif;
+}
 
 
 
 # resetting some variables
 $name = $email = $amount = $currency = $currencies_row = $payment_method = $note = $errors = $js_updatelist = $js_load = $js_funcs = $captcha_valid = $submit_ifvalid = $isvalid_ = $single_currency_text = '';
-
-
+ 
 
 # accepted payment processor
 $accepted_payment_methods = explode(',',$mybb->settings['naoardonate_payment_method']);
 $payment_methods_count = count($accepted_payment_methods);
+
+# doonation page text
+if (isBanned($mybb->user)) {
+    $donation_page_title = $lang->naoardonate_front_unban_title;
+    $donationdetails_title = $lang->naoardonate_front_unbandetails;
+} else {
+    $donation_page_title = $lang->naoardonate_front_donate_title;
+    $donationdetails_title = $lang->naoardonate_front_donationdetails;
+}
 
 # amounts array
 $amount_settings = explode(',',$mybb->settings['naoardonate_amount']);
