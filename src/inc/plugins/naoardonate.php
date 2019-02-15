@@ -38,7 +38,7 @@ function naoardonate_info(){
         "website"   => "https://red.coderme.com/mybb-donation-plugin",
         "author"    => "CoderMe.com",
         "authorsite"    => "https://markit.coderme.com?src=pluginslist",
-        "version"   => "6.0.7",
+        "version"   => "6.0.8",
         "guid"      => "a60331204b57399c66a958398b08e6df",
         // this shouldn't be in the 1st place
         // "codename"  => "naoardonate",
@@ -148,7 +148,9 @@ function naoardonate_install()
                 note varchar(100) DEFAULT '',
                 ip inet,
                 dateline numeric(30,0) NOT NULL DEFAULT '0',
-                confirmed smallint DEFAULT '0'
+                confirmed smallint DEFAULT '0',
+                isbanned smallint DEFAULT '0'
+
                 )";
             break;
 
@@ -166,7 +168,8 @@ function naoardonate_install()
                 note varchar(100) DEFAULT '',
                 ip varchar(39) DEFAULT '',
                 dateline bigint(30) NOT NULL DEFAULT '0',
-                confirmed tinyint(1) NOT NULL DEFAULT '0'
+                confirmed tinyint(1) NOT NULL DEFAULT '0',
+                isbanned tinyint(1) NOT NULL DEFAULT '0'
                 )";
             break;
 
@@ -185,6 +188,7 @@ function naoardonate_install()
                 ip VARCHAR(39) DEFAULT '',
                 dateline BIGINT(30) UNSIGNED NOT NULL DEFAULT '0',
                 confirmed TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+                isbanned TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
                 PRIMARY KEY did (did),
                 KEY uid (uid),
                 KEY ogid (ogid)) ENGINE=MyISAM;";
