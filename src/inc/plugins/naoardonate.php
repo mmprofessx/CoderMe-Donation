@@ -38,7 +38,7 @@ function naoardonate_info(){
         "website"   => "https://red.coderme.com/mybb-donation-plugin",
         "author"    => "CoderMe.com",
         "authorsite"    => "https://markit.coderme.com?src=pluginslist",
-        "version"   => "6.0.8",
+        "version"   => "6.0.9",
         "guid"      => "a60331204b57399c66a958398b08e6df",
         // this shouldn't be in the 1st place
         // "codename"  => "naoardonate",
@@ -197,8 +197,12 @@ function naoardonate_install()
 
         $db->query($query) or exit('CoderMe Donation plugin Couldn\'t be installed, database error number' . $db->error_number());
 
-    } elseif (!$db->field_exists('invoice_id', 'naoardonate')) {
+    } 
+   if (!$db->field_exists('invoice_id', 'naoardonate')) {
         $db->add_column('naoardonate', 'invoice_id', "VARCHAR(120) NOT NULL DEFAULT ''");
+    } 
+   if (!$db->field_exists('isbanned', 'naoardonate')) {
+        $db->add_column('naoardonate', 'isbanned', "SMALLINT NOT NULL DEFAULT '0'");
     }
 
     #####################
