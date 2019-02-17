@@ -88,6 +88,19 @@ $sub_tabs['confirmed'] = array(
 	'link' => "index.php?module=coderme_donors{$sep}browse&amp;action=confirmed",
 	'description' => $lang->naoardonate_browse_confirmed_desc
 );
+
+$sub_tabs['bannedunconfirmed'] = array(
+	'title' => $lang->naoardonate_browse_banned_unconfirmed,
+	'link' => "index.php?module=coderme_donors{$sep}browse&amp;action=bannedunconfirmed",
+	'description' => $lang->naoardonate_browse_unconfirmed_desc
+);
+
+$sub_tabs['bannedconfirmed'] = array(
+	'title' => $lang->naoardonate_browse_bannedconfirmed_confirmed,
+	'link' => "index.php?module=coderme_donors{$sep}browse&amp;action=bannedconfirmed",
+	'description' => $lang->naoardonate_browse_bannedconfirmed_desc
+);
+
 $sub_tabs['all'] = array(
 	'title' => $lang->naoardonate_browse_all,
 	'link' => "index.php?module=coderme_donors{$sep}browse",
