@@ -25,6 +25,11 @@ $l['naoardonate_browse_all'] = "All Donations";
 
 $l['naoardonate_browse_unconfirmed_desc'] = "Donations that have not been confirmed yet, contain those donations paid by members and guests";
 $l['naoardonate_browse_confirmed_desc'] = "Donations that have been already confirmed , contain those donations paid by members and guests";
+
+
+$l['naoardonate_browse_bannedconfirmed_desc'] = "Banned users' Donations  that have been confirmed.";
+$l['naoardonate_browse_bannedunconfirmed_desc'] = "Banned users' Donations that have not been confirmed yet.";
+
 $l['naoardonate_browse_all_desc'] = "All Donations which are saved in Database, both confirmed and not confirmed included.";
 $l['naoardonate_browse_inline_nodonors_selected'] = "Sorry, but you did not select any donors. Please select some donors and try again.";
 $l['naoardonate_browse_inline_unconfirmed'] = '{1} donation(s) unconfirmed successfully';
