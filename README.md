@@ -1,4 +1,5 @@
-## CoderMe Donation FREE v6.0 for mybb 1.8 
+## CoderMe Donation FREE
+- v6.0 for mybb 1.8 
 
 ## Features Summary
 * Online Donations through 2checkout and PayPal.
@@ -34,9 +35,6 @@
 * Remove the following directory (plugin will try to remove it for you, this just if autoremoving failed):
 ** admin/modules/naoar_donors
 
-
-
-
 ## GOLD version
 Whenever you like, you can upgrade to the GOLD version (paid), the GOLD version has the following features in addition to the FREE version's features.
 * Accept Bitcoins, Litecoins and other Cryptocurrencies through Localbitcoins and Coinpayments.
@@ -50,22 +48,16 @@ Whenever you like, you can upgrade to the GOLD version (paid), the GOLD version 
 
 
 
-
 ## New in CoderMe Donation v6.0
 ---------------------------------
     * [REMOVED]: Payza removed
     * [ADDED]:   Support PHP 7.2
 
-
 ## Home page
 https://red.coderme.com/mybb-donation-plugin
-
 
 ## Screenshots
 https://red.coderme.com/mybb-donation-plugin
 
 ## GOLD version
 https://markit.coderme.com/mybb-donation-gold
-
-
-
